@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Formulaire d'inscription</h1>
+                <div class="well">
+
+                    {{ form_start(utilisateurform) }}
+
+                    {{ form_row(utilisateurform.nom) }}
+                    {{ form_row(utilisateurform.prenom) }}
+                    {{ form_row(utilisateurform.email) }}
+                    {{ form_row(utilisateurform.password) }}
+
+                    <button type="submit" class="bg-primary">Valider</button>
+
+                    {{ form_end(utilisateurform) }}
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('annonce_index') }}">Retour à la liste des annonces</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div> <!-- /.container -->
+        <br><br>
+
+    </div>
+ {% endblock %}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Petite-Annonce{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+
+    <!-- Custom CSS
+    <link href="css/small-business.css" rel="stylesheet">-->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/btn-circle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/panel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plan.css')}}">
+
+
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+<!-- Nav bar -->
+
+
+<div class="container">
+
+    <div class="row">
+
+        {% block body %}
+        {% endblock %}
+
+        <section class="col-md-8">
+            {% block content %}{% endblock %}
+        </section>
+
+
+
+        <aside class="col-md-4">
+            {% block aside %}{% endblock %}
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Myself 2017</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Star -->
+    <script src="{{ asset('js/star/star.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <form method="post" action="#">
+                <div class="form-group">
+
+                    <label class="col-md-12">Mot de passe perdu</label>
+                    <input class="form-control"
+                           name="email"
+                           type="email"
+                           placeholder="Indiquez votre e-mail">
+
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-primary">Rénitialisation de votre Mot de passe
+                </button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
+

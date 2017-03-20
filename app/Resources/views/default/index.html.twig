@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4">
+                <img alt="logo" src="{{ asset('images/images.jpeg') }}"/>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="col-md-3">
+            index
+        </div>
+        <!-- /.col-md-9 -->
+        <div class="col-md-6">
+            Principe:Créer un système de petite annonce.<br>
+            Inscription par login / mot de passe, mot de passe perdu, connexion (si possible login
+            facebook).<br><br>
+            Créer une annonce avec Catégorie, Titre, texte (plus tard la possibilité de mettre des images)<br>
+            <br><br>
+            Back-office: CRUD.<br>
+            Pour les mails: utiliser Mailgun.com<br>
+        </div>
+    </div>
+{% endblock %}

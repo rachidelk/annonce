@@ -1,0 +1,41 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+    encoders:
+
+            AppBundle\Entity\utilisateur:
+              algorithm: sha1
+              iterations: 1
+              encode_as_base64: false
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        utilisateur_entity:
+                  entity: {class: AppBundle\Entity\utilisateur, property: email}
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        utilisateur:
+                  pattern: ^/
+                  provider: utilisateur_entity
+                  anonymous: ~
+                  form_login:
+                    login_path: utilisateur_connexion
+                    check_path: utilisateur_login_check
+                    default_target_path: annonce_index
+
+                  logout:
+                    path: utilisateur_logout
+                    target: annonce_index
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
